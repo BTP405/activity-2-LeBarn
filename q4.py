@@ -1,5 +1,5 @@
-def stats_decorator(func):
-    def wrapper(numbers):
+def stats_decorator(func): #a decorator to extend the behaviour of the function without changing it's actual code, this will be used in the last function to create a result
+    def wrapper(numbers):#an intermediate function to take in numbers before calling the next main function, printStats
         #step1: print the numbers read
         print(f"Numbers: {numbers}")
 
@@ -28,9 +28,9 @@ def printStats(t, stats_function):
             #call the decorator function
             stats_function(numbers)
 
-#an exaple function to test this code out
+#an example function to test this code out
 @stats_decorator
 def custom_stats_function(numbers):
-    pass
+    pass #pass is a placeholder for the actual logic from the decorator to be executed
 
 printStats('numbers_data.txt', custom_stats_function)
